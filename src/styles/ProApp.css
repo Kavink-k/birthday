@@ -1,0 +1,1108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #0a0a0a;
+  color: white;
+  overflow-x: hidden;
+}
+
+.pro-app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ========== LUXURY ENTRY STYLES ========== */
+.luxury-entry {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.luxury-card {
+  max-width: 500px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 40px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.glitch-title {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 0 #ff6b6b, -2px -2px 0 #4ecdc4;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.step.active {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  border-color: gold;
+  box-shadow: 0 0 20px gold;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.luxury-input {
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: white;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.luxury-input:focus {
+  outline: none;
+  border-color: gold;
+  box-shadow: 0 0 20px gold;
+}
+
+.luxury-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.next-btn, .prev-btn, .celebrate-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.next-btn, .celebrate-btn {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  color: white;
+}
+
+.prev-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.next-btn:hover, .celebrate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+.prev-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.next-btn:disabled, .prev-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.preview-details {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.preview-details p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.entry-instructions {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 12px 30px;
+  border-radius: 50px;
+  color: white;
+  border: 1px solid gold;
+  z-index: 100;
+  text-align: center;
+}
+
+/* ========== TIME CAPSULE STYLES ========== */
+.time-capsule {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.capsule-container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 40px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.capsule-header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: gold;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+  border: 1px solid gold;
+}
+
+.countdown-value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: gold;
+  line-height: 1;
+}
+
+.countdown-unit {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.continue-btn {
+  margin-top: 30px;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.continue-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+/* ========== REVEAL PORTAL STYLES ========== */
+.reveal-portal {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.portal-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.portal-header h2 {
+  font-size: 2.5rem;
+  color: gold;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px gold;
+}
+
+.portal-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.personalized-greeting {
+  font-size: 1.2rem;
+  color: gold;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.reveal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reveal-item {
+  height: 400px;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.reveal-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-card-pro {
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.reveal-locked {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.lock-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+.reveal-unlocked {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+.reveal-unlocked h3 {
+  color: white;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.reveal-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 15px 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.reveal-funfact {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.reveal-funfact p {
+  margin: 0;
+  font-style: italic;
+}
+
+.portal-complete {
+  text-align: center;
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  max-width: 500px;
+}
+
+.portal-complete h3 {
+  color: gold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.completion-message {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.final-reveal-btn {
+  margin-top: 20px;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.final-reveal-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+/* ========== FINAL CELEBRATION STYLES - CLEAN & CENTERED ========== */
+.final-celebration {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.celebration-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+  z-index: 0;
+  animation: slowZoom 20s infinite alternate ease-in-out;
+}
+
+.celebration-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.celebration-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.celebration-content {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(15px);
+  border-radius: 60px;
+  padding: 50px 40px;
+  text-align: center;
+  border: 2px solid rgba(255, 215, 0, 0.6);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+  position: relative;
+  z-index: 20;
+}
+
+/* Crown Animation - Centered */
+.crown-wrapper {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: float 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crown-gold {
+  display: inline-block;
+  filter: drop-shadow(0 0 20px gold);
+}
+
+/* Birthday Title - Centered */
+.celebration-title {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.glow-text {
+  color: gold;
+  text-shadow: 0 0 20px gold, 0 0 40px rgba(255, 215, 0, 0.5);
+  display: inline-block;
+}
+
+/* Age Display - Centered */
+.age-display {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.age-number {
+  font-size: 6rem;
+  font-weight: bold;
+  color: gold;
+  line-height: 1;
+  text-shadow: 0 0 30px gold, 0 0 60px rgba(255, 215, 0, 0.5);
+  text-align: center;
+}
+
+.age-label {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Birth Info - Centered Flex */
+.birth-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.info-item:hover {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: gold;
+  transform: translateY(-3px);
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 10px gold);
+}
+
+.info-item span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+/* Birthday Message Box - Centered */
+.birthday-message-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  padding: 40px 30px;
+  margin: 40px 0;
+  border: 2px solid gold;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+  transition: all 0.5s ease;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 107, 107, 0.2));
+}
+
+.message-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.birthday-message-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px rgba(255, 215, 0, 0.4);
+}
+
+.birthday-message-box:hover .message-background {
+  opacity: 0.25;
+}
+
+/* Poetic Message - Centered */
+.poetic-message {
+  position: relative;
+  z-index: 2;
+  font-size: 1.6rem;
+  line-height: 2.2;
+  color: white;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Dancing Script', cursive;
+  letter-spacing: 1px;
+}
+
+.heart-emoji {
+  font-size: 2.5rem;
+  display: block;
+  margin-top: 20px;
+  animation: heartbeat 1.5s ease infinite;
+  text-align: center;
+}
+
+/* Share Button - Centered */
+.share-button {
+  margin: 30px auto 0;
+  padding: 18px 50px;
+  border: none;
+  border-radius: 60px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffd700, #ff6b6b);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.share-button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.5);
+}
+
+/* Image Caption */
+.image-caption {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 16px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design - Mobile & Tablet */
+@media (max-width: 768px) {
+  .celebration-content {
+    padding: 30px 20px;
+    border-radius: 40px;
+  }
+  
+  .crown-wrapper {
+    font-size: 4rem;
+  }
+  
+  .celebration-title {
+    font-size: 2.2rem;
+  }
+  
+  .age-number {
+    font-size: 4rem;
+  }
+  
+  .age-label {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  
+  .birth-info {
+    gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .info-item {
+    padding: 12px 20px;
+    min-width: 140px;
+  }
+  
+  .info-item span {
+    font-size: 1rem;
+  }
+  
+  .info-icon {
+    font-size: 1.2rem;
+  }
+  
+  .poetic-message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding: 20px;
+  }
+  
+  .share-button {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+  }
+  
+  .image-caption {
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .celebration-content {
+    padding: 25px 15px;
+  }
+  
+  .crown-wrapper {
+    font-size: 3.5rem;
+  }
+  
+  .celebration-title {
+    font-size: 1.8rem;
+  }
+  
+  .age-number {
+    font-size: 3rem;
+  }
+  
+  .age-label {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .birth-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .info-item {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+  
+  .poetic-message {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 15px;
+  }
+  
+  .heart-emoji {
+    font-size: 2rem;
+  }
+  
+  .share-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+  .celebration-title {
+    font-size: 1.5rem;
+  }
+  
+  .age-number {
+    font-size: 2.5rem;
+  }
+  
+  .poetic-message {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+}
+
+/* Animations */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Fix for name text alignment */
+.celebration-title .glow-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 1.2em;
+}
+
+/* Ensure all text is centered */
+h1, h2, h3, p, div {
+  text-align: center;
+}
+
+/* Fix for long names */
+.celebration-title {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve readability */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== CONFETTI STYLES ========== */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background: gold;
+  animation: fall linear infinite;
+}
+
+.simple-confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  animation: pop 1.5s ease;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+/* ========== GLOBAL RESET BUTTON ========== */
+.global-reset {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.global-reset:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: gold;
+}
+
+/* ========== LOADING STYLES ========== */
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: gold;
+  text-shadow: 0 0 20px gold;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fall {
+  0% { transform: translateY(-20px) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+@keyframes pop {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* ========== SCROLLBAR STYLES ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff6b6b, gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, gold, #ff6b6b);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+  .reveal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .glitch-title {
+    font-size: 1.5rem;
+  }
+  
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .countdown-value {
+    font-size: 2.5rem;
+  }
+  
+  .celebration-title {
+    font-size: 2rem;
+  }
+  
+  .age-number {
+    font-size: 3rem;
+  }
+  
+  .portal-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .reveal-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .reveal-item {
+    height: 350px;
+  }
+  
+  .entry-instructions {
+    width: 90%;
+    font-size: 0.9rem;
+    padding: 10px;
+    white-space: normal;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .next-btn, .prev-btn, .celebrate-btn {
+    width: 100%;
+  }
+  
+  .capsule-container {
+    padding: 30px 20px;
+  }
+  
+  .capsule-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .celebration-content {
+    padding: 30px 20px;
+  }
+  
+  .birth-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info-item {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .luxury-card {
+    padding: 30px 20px;
+  }
+  
+  .step {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .countdown-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reveal-item {
+    height: 300px;
+  }
+  
+  .celebration-title {
+    font-size: 1.5rem;
+  }
+  
+  .age-number {
+    font-size: 2.5rem;
+  }
+  
+  .age-label {
+    font-size: 1rem;
+  }
+  
+  .poetic-message {
+    font-size: 1rem;
+  }
+  
+  .global-reset {
+    top: 10px;
+    left: 10px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  .confetti-container,
+  .simple-confetti,
+  .global-reset,
+  .entry-instructions {
+    display: none !important;
+  }
+  
+  .reveal-portal,
+  .final-celebration,
+  .time-capsule,
+  .luxury-entry {
+    background: white !important;
+    color: black !important;
+  }
+}
